@@ -13,7 +13,7 @@ pipeline {
         
         stage('Second Stage') {
             steps {
-                echo "abc"
+                echo "BRANCH NAME: " + env.GIT_BRANCH
             }
             
         }        

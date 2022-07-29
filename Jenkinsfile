@@ -15,17 +15,6 @@ pipeline {
             steps {
                 echo "BRANCH NAME: " + env.GIT_BRANCH
             }
-         stage('Update GIT') {
-            steps {
-                script {
-                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                            sh "git add ."
-                            sh "git commit -m 'Triggered Build: ${env.BUILD_NUMBER}'"
-                            sh "git push https://github.com/EwelinaCh/ci-cd-training main"
-                        }
-                      }
-                    }
-                  }
         }        
     }
 }
